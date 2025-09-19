@@ -10,7 +10,7 @@ public class HLServer implements ModInitializer {
 
 	public static final String MOD_NAME = /*$ mod_name*/ "Hudless";
 	public static final String MOD_ID = /*$ mod_id*/ "hudless";
-	public static final String MOD_VERSION = /*$ mod_version*/ "2.0.1+1.21.7";
+	public static final String MOD_VERSION = /*$ mod_version*/ "2.0.4+1.21.7";
 	public static final String MOD_AUTHORS = /*$ mod_authors*/ "ZipeStudio";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
