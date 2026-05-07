@@ -1,23 +1,21 @@
 package me.zipestudio.hudless.config;
 
-import me.zipestudio.hudless.client.HLClient;
-
 import java.util.function.Supplier;
 
 public enum HudElement {
 
-    STATUS_BARS(() -> HLClient.getConfig().isHideStatusBars()),
+    CROSSHAIR(() -> LeafyConfig.getInstance().getHuds().isHideCrosshair(), false),
+    HOTBAR(() -> LeafyConfig.getInstance().getHuds().isHideHotbar()),
 
-    HOTBAR(() -> HLClient.getConfig().isHideHotbar()),
-    HELD_ITEM_TOOLTIP(() -> HLClient.getConfig().isHideHeldItemTooltip()),
-    INFO_BAR(() -> HLClient.getConfig().isHideExperienceBar()),
+    EFFECTS(() -> LeafyConfig.getInstance().getHuds().isHideEffects(), false),
+    SCOREBOARD(() -> LeafyConfig.getInstance().getHuds().isHideScoreboard(), false),
+    BOSSBAR(() -> LeafyConfig.getInstance().getHuds().isHideBossBar(), false),
 
-    CROSSHAIR(() -> HLClient.getConfig().isHideCrosshair(), false),
-    STATUS_EFFECTS(() -> HLClient.getConfig().isHideEffects(), false),
-    MOUNT_HEALTH(() -> HLClient.getConfig().isHideMountHealth()),
+    CHAT(() -> LeafyConfig.getInstance().getHuds().isHideChat(), false),
+    SUBTITLES(() -> LeafyConfig.getInstance().getHuds().isHideSubtitles(), false),
 
-    SCOREBOARD(() -> HLClient.getConfig().isHideScoreboardSidebar(), false),
-    MISC_OVERLAYS(() -> HLClient.getConfig().isHideMicsOverlays(), false);
+    STATUS_BAR(() -> LeafyConfig.getInstance().getHuds().isHideStatusBar()),
+    PROGRESS_BAR(() -> LeafyConfig.getInstance().getHuds().isHideProgressBar());
 
     private final Supplier<Boolean> configGetter;
     private final boolean useTranslate;

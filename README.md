@@ -2,31 +2,31 @@
   <tr>
     <td style="width: 124px; vertical-align: top; text-align: center;">
       <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="https://raw.githubusercontent.com/ZipeStudio/Vault/refs/heads/main/design/mods/main/zipestudio.png" title="It's me">
+        <img src="https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/zipestudio.png?raw=true" title="It's me">
       </div>
     </td>
     <td style="vertical-align: top;">
       <div style="display: flex; flex-direction: column;">
         <div style="display: flex;">
-          <a href="https://github.com/ZipeStudio/Hudless">
-            <img src="https://raw.githubusercontent.com/ZipeStudio/Vault/refs/heads/main/design/mods/main/github.png" title="Github page">
+          <a href="https://github.com/ZipeStudio/hudless">
+            <img src="https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/github.png?raw=true" title="Github page">
           </a>
           <a href="https://modrinth.com/mod/hudless">
-            <img src="https://raw.githubusercontent.com/ZipeStudio/Vault/refs/heads/main/design/mods/main/modrinth.png" title="Modrinth page">
+            <img src="https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/modrinth.png?raw=true" title="Modrinth page">
           </a>
           <a href="https://www.curseforge.com/minecraft/mc-mods/hudless">
-            <img src="https://raw.githubusercontent.com/ZipeStudio/Vault/refs/heads/main/design/mods/main/curseforge.png" title="CurseForge page">
+            <img src="https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/curseforge.png?raw=true" title="CurseForge page">
           </a>
         </div>
         <div style="display: flex;">
           <a href="https://discord.com/invite/XmGF7rkkuY">
-            <img src="https://raw.githubusercontent.com/ZipeStudio/Vault/refs/heads/main/design/mods/main/discord.png" title="Discord account">
+            <img src="https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/discord.png?raw=true" title="Discord account">
           </a>
           <a href="https://t.me/zipeleaf">
-            <img src="https://raw.githubusercontent.com/ZipeStudio/Vault/refs/heads/main/design/mods/main/telegram.png" title="Telegram channel">
+            <img src="https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/telegram.png?raw=true" title="Telegram channel">
           </a>
           <a href="https://ko-fi.com/zipestudio/tip">
-            <img src="https://raw.githubusercontent.com/ZipeStudio/Vault/refs/heads/main/design/mods/main/support.png" title="Support me (thx)">
+            <img src="https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/support.png?raw=true" title="Support me (thx)">
           </a>
         </div>
       </div>
@@ -34,21 +34,37 @@
   </tr>
 </table>
 
-# 💬 Description
+!["Description" Title](https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/ZSdescription.png?raw=true)
 
-> Client-side Fabric mod that automatically hides HUD elements with customizable conditions and smooth animation.
+**Hudless** is a Client-side mod that automatically hides HUD elements with customizable conditions and smooth animation.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/ZipeStudio/Hudless/refs/heads/master/img/showcase.gif" width="1000px" alt="mod banner"/>
-</div>
+# [Video Showcase](https://www.youtube.com/watch?v=PStm03vhah0)
 
----
+!["Hudless banner"](https://github.com/ZipeStudio/hudless/blob/master/img/showcase.gif?raw=true)
 
-# 🔷 Required
+!["Compatible" Title](https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/ZScompatible.png?raw=true)
 
-🔹`YetAnotherConfigLib (YACL) mod`
-<div align="center">
-  <img src="https://raw.githubusercontent.com/ZipeStudio/Hudless/refs/heads/master/img/settings_showcase.png" width="1000px" alt="mod settings"/>
-</div>
+- Works fine with Axiom, Combat Roll buttons.
 
----
+!["Configurable" Title](https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/ZSconfigurable.png?raw=true)
+
+### Settings
+> ![settings](https://github.com/ZipeStudio/hudless/blob/master/img/config.png?raw=true)
+
+!["Support" Title](https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/ZSsupport.png?raw=true)
+
+### Want to support mod and authors? Just tell everyone about this mod!
+
+Yeah, you got it right. Just by advertising, you will support the mod and the creators well. The more people will know about this mod, the more downloads it will have, more downloads will give good motivation to authors and increase income from the site (literally free donation). **Remember, advertising must not be intrusive and annoiyng!**
+
+### What you can do?
+- Make a video review / advertisement
+- Share it on social media or Discord
+- Tell your friends about this mod
+- Add it to your modpack or just download and enjoy the game
+
+> Every mention matters — thank you for helping the community grow 🤍
+
+!["Licensing" Title](https://github.com/ZipeStudio/Vault/blob/main/design/mods/main/ZSlicensing.png?raw=true)
+
+### [See the original mod repository](https://github.com/ZipeStudio/hudless)

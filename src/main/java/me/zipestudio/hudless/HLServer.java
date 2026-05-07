@@ -1,30 +1,40 @@
 package me.zipestudio.hudless;
 
-import net.minecraft.text.*;
-import net.minecraft.util.Identifier;
-import org.slf4j.*;
+import net.minecraft.network.chat.*;
+import net.minecraft.resources.ResourceLocation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import net.fabricmc.api.ModInitializer;
-
-public class HLServer implements ModInitializer {
+public class HLServer {
 
 	public static final String MOD_NAME = /*$ mod_name*/ "Hudless";
 	public static final String MOD_ID = /*$ mod_id*/ "hudless";
-	public static final String MOD_VERSION = /*$ mod_version*/ "2.0.4+1.21.7";
-	public static final String MOD_AUTHORS = /*$ mod_authors*/ "ZipeStudio";
+	public static final String YACL_DEPEND_VERSION = /*$ yacl*/ "3.8.2+1.21.1-fabric";
 
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
+	public static Logger LOGGER = LoggerFactory.getLogger(HLServer.MOD_NAME);
 
-	public static Identifier id(String path) {
-		return Identifier.of(MOD_ID, path);
+	public static ResourceLocation id(String path) {
+		//? if >=1.21 {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+		//?} else {
+		/*return ResourceLocation.tryBuild(MOD_ID, path);
+		 *///?}
 	}
 
-	public static MutableText text(String path, Object... args) {
-		return Text.translatable(String.format("%s.%s", MOD_ID, path), args);
+	public static ResourceLocation parseId(String path) {
+		//? if >=1.21 {
+		return ResourceLocation.parse(path);
+		//?} else {
+		/*return new ResourceLocation(path);
+		 *///?}
 	}
 
-	@Override
-	public void onInitialize() {
-
+	public static MutableComponent text(String path, Object... args) {
+		return Component.translatable(String.format("%s.%s", MOD_ID, path), args);
 	}
+
+	public static void onInitialize() {
+		LOGGER.info("{} Initialized", MOD_NAME);
+	}
+
 }

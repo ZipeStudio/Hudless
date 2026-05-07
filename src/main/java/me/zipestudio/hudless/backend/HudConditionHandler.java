@@ -1,12 +1,11 @@
 package me.zipestudio.hudless.backend;
 
-import me.zipestudio.hudless.client.HLClient;
-import me.zipestudio.hudless.config.HLConfig;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.entity.LivingEntity;
+import me.zipestudio.hudless.config.LeafyConfig;
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.player.Player;
 
 public class HudConditionHandler {
+    
     private static int prevSlot;
     private static int prevHealth;
     private static int prevHunger;
@@ -14,27 +13,27 @@ public class HudConditionHandler {
     private static int prevAir;
     private static int prevEffects;
     private static int prevMountHealth;
+    private static float prevExperience;
 
     public static void tick() {
-        MinecraftClient client = MinecraftClient.getInstance();
-        ClientPlayerEntity player = client.player;
-        HLConfig config = HLClient.getConfig();
+        Minecraft client = Minecraft.getInstance();
+        Player player = client.player;
+        LeafyConfig config = LeafyConfig.getInstance();
 
         if (player == null || player.isSpectator()) {
             return;
         }
 
         //? if >=1.21.5 {
-        int currentSlot = player.getInventory().getSelectedSlot();
-
-        //?} else {
-        /*int currentSlot = player.getInventory().selectedSlot;
-        *///?}
+        /*int currentSlot = player.getInventory().getSelectedSlot();
+        *///?} else {
+        int currentSlot = player.getInventory().selected;
+        //?}
 
         if (currentSlot != prevSlot) {
             prevSlot = currentSlot;
 
-            if (config.isHideHotbar() && config.isTriggerHotbarCondition()) {
+            if (config.getHuds().isHideHotbar() && config.getTriggers().isTriggerHotbar()) {
                 HudAnimationHandler.revealHud();
             }
         }
@@ -43,56 +42,68 @@ public class HudConditionHandler {
         if (currentHealth != prevHealth) {
             prevHealth = currentHealth;
 
-            if (config.isHideStatusBars() && config.isTriggerHealthCondition()) {
+            if (config.getHuds().isHideStatusBar() && config.getTriggers().isTriggerHealth()) {
                 HudAnimationHandler.revealHud();
             }
         }
 
-        int currentHunger = player.getHungerManager().getFoodLevel();
+        int currentHunger = player.getFoodData().getFoodLevel();
         if (currentHunger != prevHunger) {
             prevHunger = currentHunger;
 
-            if (config.isHideStatusBars() && config.isTriggerHungerCondition()) {
+            if (config.getHuds().isHideStatusBar() && config.getTriggers().isTriggerHunger()) {
                 HudAnimationHandler.revealHud();
             }
         }
 
-        int currentArmor = player.getArmor();
+        int currentArmor = player.getArmorValue();
         if (currentArmor != prevArmor) {
             prevArmor = currentArmor;
 
-            if (config.isHideStatusBars() && config.isTriggerArmorCondition()) {
+            if (config.getHuds().isHideStatusBar() && config.getTriggers().isTriggerArmor()) {
                 HudAnimationHandler.revealHud();
             }
         }
 
-        int currentAir = player.getAir();
+        int currentAir = player.getAirSupply();
         if (currentAir != prevAir) {
             prevAir = currentAir;
 
-            if (config.isHideStatusBars() && config.isTriggerAirBubblesCondition()) {
+            if (config.getHuds().isHideStatusBar() && config.getTriggers().isTriggerAirBubbles()) {
                 HudAnimationHandler.revealHud();
             }
         }
 
-        int currentEffects = player.getStatusEffects().size();
+        int currentEffects = player.getActiveEffects().size();
         if (currentEffects != prevEffects) {
             prevEffects = currentEffects;
 
-            if (config.isHideEffects() && config.isTriggerEffectsCondition()) {
+            if (config.getHuds().isHideEffects() && config.getTriggers().isTriggerEffects()) {
                 HudAnimationHandler.revealHud();
             }
         }
 
-        if (player.hasVehicle() && player.getVehicle() instanceof LivingEntity mount) {
+        if (player.getVehicle() != null && player.getVehicle() instanceof net.minecraft.world.entity.LivingEntity mount) {
+
             int mountHealth = (int) mount.getHealth();
             if (mountHealth != prevMountHealth) {
-                prevMountHealth = mountHealth;
 
-                if (config.isHideMountHealth() && config.isTriggerMountHealthCondition()) {
+                prevMountHealth = mountHealth;
+                if (config.getHuds().isHideStatusBar() && config.getTriggers().isTriggerMountHealth()) {
                     HudAnimationHandler.revealHud();
                 }
+
             }
         }
+
+        float currentExperience = player.experienceProgress;
+        if (currentExperience != prevExperience) {
+            prevExperience = currentExperience;
+            if (config.getHuds().isHideProgressBar() && config.getTriggers().isTriggerExperience()) {
+                HudAnimationHandler.revealHud();
+            }
+        }
+
     }
+
 }

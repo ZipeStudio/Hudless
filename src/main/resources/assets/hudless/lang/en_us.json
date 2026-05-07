@@ -1,51 +1,85 @@
 {
   "modmenu.descriptionTranslation.${mod_id}": "Client-side Fabric mod that automatically hides HUD elements with customizable conditions and smooth animation.",
-  "hudless.modmenu.title": "Hudless",
-  "hudless.category.general": "General Settings",
-  "hudless.category.triggers": "Trigger Conditions",
-  "hudless.category.hud": "HUD Elements",
-  "hudless.option.enableMod": "Enable Mod",
-  "hudless.option.enableMod.desc": "Enable or disable Hudless functionality.",
-  "hudless.option.enableFade": "Enable Fading",
-  "hudless.option.enableFade.desc": "Apply a fade-out effect to HUD elements when hiding.",
-  "hudless.option.visibleTicks": "Visibility Duration",
-  "hudless.option.visibleTicks.desc": "How long (in ticks) the HUD stays visible after a trigger.",
-  "hudless.option.hideSpeed": "Hide Speed",
-  "hudless.option.hideSpeed.desc": "Speed at which HUD elements move off-screen.",
-  "hudless.option.hideFadeSpeed": "Fade Speed",
-  "hudless.option.hideFadeSpeed.desc": "Speed at which HUD elements fade out when hiding.",
-  "hudless.option.minY": "Minimum Y Offset",
-  "hudless.option.minY.desc": "Lowest Y-offset to which HUD elements can move when hidden.",
-  "hudless.option.trigger.hunger": "On Hunger Change",
-  "hudless.option.trigger.hunger.desc": "Show the HUD when your hunger level changes.",
-  "hudless.option.trigger.health": "On Health Change",
-  "hudless.option.trigger.health.desc": "Show the HUD when your health changes.",
-  "hudless.option.trigger.hotbar": "On Hotbar Slot Change",
-  "hudless.option.trigger.hotbar.desc": "Show the HUD when you switch hotbar slots.",
-  "hudless.option.trigger.armor": "On Armor Change",
-  "hudless.option.trigger.armor.desc": "Show the HUD when your armor value changes.",
-  "hudless.option.trigger.air_bubbles": "On Air Bubbles Change",
-  "hudless.option.trigger.air_bubbles.desc": "Show the HUD when your underwater air bubbles change.",
-  "hudless.option.trigger.effects": "On Effects Change",
-  "hudless.option.trigger.effects.desc": "Show the HUD when your active status effects change.",
-  "hudless.option.trigger.mount_health": "On Mount Health Change",
-  "hudless.option.trigger.mount_health.desc": "Show the HUD when your mount’s health changes.",
-  "hudless.option.status_bars": "Hide Status Bars",
-  "hudless.option.status_bars.desc": "Hide the health, hunger, armor and air-bubble bars.",
-  "hudless.option.experience": "Hide Experience Bar",
-  "hudless.option.experience.desc": "Hide the experience bar.",
-  "hudless.option.effects": "Hide Potion Effects",
-  "hudless.option.effects.desc": "Hide the active potion-effects display.",
-  "hudless.option.scoreboard": "Hide Scoreboard",
-  "hudless.option.scoreboard.desc": "Hide the sidebar scoreboard.",
-  "hudless.option.overlay": "Hide Overlays",
-  "hudless.option.overlay.desc": "Hide additional HUD overlays.",
-  "hudless.option.hotbar": "Hide Hotbar",
-  "hudless.option.hotbar.desc": "Hide the hotbar.",
-  "hudless.option.held_item_tooltip": "Hide Item Tooltips",
-  "hudless.option.held_item_tooltip.desc": "Hide tooltips for held items.",
-  "hudless.option.crosshair": "Hide Crosshair",
-  "hudless.option.crosshair.desc": "Hide the aiming crosshair.",
-  "hudless.option.mount_health": "Hide Mount Health",
-  "hudless.option.mount_health.desc": "Hide the mount’s health bar."
+  "${mod_id}.modmenu.title": "Hudless",
+  "${mod_id}.modmenu.no_config_library_screen.message": "You need to install §6§lYet Another Config Lib [YACL]§f to open ${mod_name} Configuration Screen\n\n§a§lOpen §6§lYACL §a§lModrinth page?",
+
+  "${mod_id}.modmenu.category.settings.name": "General Settings",
+  "${mod_id}.modmenu.category.huds.name": "HUD Elements",
+  "${mod_id}.modmenu.category.triggers.name": "Trigger Conditions",
+
+  "${mod_id}.modmenu.option.enableMod.name": "Enable Mod",
+  "${mod_id}.modmenu.option.enableMod.description": "Enable or disable Hudless functionality.",
+
+  "${mod_id}.modmenu.option.enableFading.name": "Enable Fading",
+  "${mod_id}.modmenu.option.enableFading.description": "Apply a fade-out effect when hiding HUD elements.",
+
+  "${mod_id}.modmenu.option.visibleTicks.name": "Visibility Duration (ticks)",
+  "${mod_id}.modmenu.option.visibleTicks.description": "How long (in ticks) the HUD stays visible after a trigger.",
+
+  "${mod_id}.modmenu.option.hideSpeed.name": "Hide Speed",
+  "${mod_id}.modmenu.option.hideSpeed.description": "Speed at which HUD elements move off-screen.",
+
+  "${mod_id}.modmenu.option.hideFadeSpeed.name": "Fade Speed",
+  "${mod_id}.modmenu.option.hideFadeSpeed.description": "Speed at which HUD elements fade out.",
+
+  "${mod_id}.modmenu.option.maxY.name": "Maximum Y Offset",
+  "${mod_id}.modmenu.option.maxY.description": "Highest Y offset (fully visible HUD position).",
+
+  "${mod_id}.modmenu.option.minY.name": "Minimum Y Offset",
+  "${mod_id}.modmenu.option.minY.description": "Lowest Y offset (hidden HUD position).",
+
+  "${mod_id}.modmenu.option.triggerHotbar.name": "On Hotbar Slot Change",
+  "${mod_id}.modmenu.option.triggerHotbar.description": "Show HUD when switching hotbar slots.",
+
+  "${mod_id}.modmenu.option.triggerHealth.name": "On Health Change",
+  "${mod_id}.modmenu.option.triggerHealth.description": "Show HUD when health changes.",
+
+  "${mod_id}.modmenu.option.triggerHunger.name": "On Hunger Change",
+  "${mod_id}.modmenu.option.triggerHunger.description": "Show HUD when hunger level changes.",
+
+  "${mod_id}.modmenu.option.triggerArmor.name": "On Armor Change",
+  "${mod_id}.modmenu.option.triggerArmor.description": "Show HUD when armor value changes.",
+
+  "${mod_id}.modmenu.option.triggerAirBubbles.name": "On Air Bubbles Change",
+  "${mod_id}.modmenu.option.triggerAirBubbles.description": "Show HUD when underwater air changes.",
+
+  "${mod_id}.modmenu.option.triggerEffects.name": "On Effects Change",
+  "${mod_id}.modmenu.option.triggerEffects.description": "Show HUD when active potion effects change.",
+
+  "${mod_id}.modmenu.option.triggerMountHealth.name": "On Mount Health Change",
+  "${mod_id}.modmenu.option.triggerMountHealth.description": "Show HUD when mount health changes.",
+
+  "${mod_id}.modmenu.option.triggerExperience.name": "On Experience Change",
+  "${mod_id}.modmenu.option.triggerExperience.description": "Show HUD when the player's experience bar changes.",
+
+  "${mod_id}.modmenu.option.hideCrosshair.name": "Hide Crosshair",
+  "${mod_id}.modmenu.option.hideCrosshair.description": "Hide aiming crosshair.",
+
+  "${mod_id}.modmenu.option.hideHotbar.name": "Hide Hotbar",
+  "${mod_id}.modmenu.option.hideHotbar.description": "Hide the hotbar.",
+
+  "${mod_id}.modmenu.option.hideEffects.name": "Hide Potion Effects",
+  "${mod_id}.modmenu.option.hideEffects.description": "Hide active potion effects display.",
+
+  "${mod_id}.modmenu.option.hideScoreboard.name": "Hide Scoreboard",
+  "${mod_id}.modmenu.option.hideScoreboard.description": "Hide sidebar scoreboard.",
+
+  "${mod_id}.modmenu.option.hideBossBar.name": "Hide Boss Bar",
+  "${mod_id}.modmenu.option.hideBossBar.description": "Hide boss health bar.",
+
+  "${mod_id}.modmenu.option.hideChat.name": "Hide Chat",
+  "${mod_id}.modmenu.option.hideChat.description": "Hide chat messages.",
+
+  "${mod_id}.modmenu.option.hideSubtitles.name": "Hide Subtitles",
+  "${mod_id}.modmenu.option.hideSubtitles.description": "Hide sound subtitles.",
+
+  "${mod_id}.modmenu.option.hideStatusBar.name": "Hide Status Bars",
+  "${mod_id}.modmenu.option.hideStatusBar.description": "Hide health, hunger, armor, air bubbles, mount health, etc.",
+
+  "${mod_id}.modmenu.option.hideProgressBar.name": "Hide Progress Bars",
+  "${mod_id}.modmenu.option.hideProgressBar.description": "Hide experience bar, jump bar, locator bar, etc.",
+
+
+  "${mod_id}.modmenu.formatter.enabled_or_disabled.true": "Enabled",
+  "${mod_id}.modmenu.formatter.enabled_or_disabled.false": "Disabled"
 }

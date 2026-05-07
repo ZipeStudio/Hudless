@@ -1,51 +1,85 @@
 {
-  "modmenu.descriptionTranslation.${mod_id}": "Клиентский мод для Fabric, автоматически скрывающий элементы интерфейса с настраиваемыми условиями и анимацией.",
-  "hudless.modmenu.title": "Hudless",
-  "hudless.category.general": "Основные настройки",
-  "hudless.category.triggers": "Условия отображения",
-  "hudless.category.hud": "Элементы интерфейса",
-  "hudless.option.enableMod": "Включить мод",
-  "hudless.option.enableMod.desc": "Активировать или отключить функционал Hudless.",
-  "hudless.option.enableFade": "Плавное исчезновение",
-  "hudless.option.enableFade.desc": "Включить эффект постепенного уменьшения прозрачности элементов интерфейса при их скрытии.",
-  "hudless.option.visibleTicks": "Время отображения",
-  "hudless.option.visibleTicks.desc": "Время (в тиках), в течение которого интерфейс остаётся видимым после срабатывания условия.",
-  "hudless.option.hideSpeed": "Скорость скрытия",
-  "hudless.option.hideSpeed.desc": "Скорость, с которой элементы интерфейса перемещаются при исчезновении.",
-  "hudless.option.hideFadeSpeed": "Скорость прозрачности",
-  "hudless.option.hideFadeSpeed.desc": "Скорость уменьшения прозрачности элементов при исчезновении.",
-  "hudless.option.minY": "Минимальное положение по Y",
-  "hudless.option.minY.desc": "Минимальное значение по оси Y, до которого могут опускаться элементы интерфейса.",
-  "hudless.option.trigger.hunger": "При изменении голода",
-  "hudless.option.trigger.hunger.desc": "Показать интерфейс при изменении уровня голода.",
-  "hudless.option.trigger.health": "При изменении здоровья",
-  "hudless.option.trigger.health.desc": "Показать интерфейс при изменении здоровья игрока.",
-  "hudless.option.trigger.hotbar": "При смене слота",
-  "hudless.option.trigger.hotbar.desc": "Показать интерфейс при переключении слота в хотбаре.",
-  "hudless.option.trigger.armor": "При изменении брони",
-  "hudless.option.trigger.armor.desc": "Показать интерфейс при изменении количества брони.",
-  "hudless.option.trigger.air_bubbles": "При изменении пузырей воздуха",
-  "hudless.option.trigger.air_bubbles.desc": "Показать интерфейс при изменении пузырьков воздуха под водой.",
-  "hudless.option.trigger.effects": "При изменении эффектов",
-  "hudless.option.trigger.effects.desc": "Показать интерфейс при изменении активных эффектов (зелья и пр.).",
-  "hudless.option.trigger.mount_health": "При изменении здоровья маунта",
-  "hudless.option.trigger.mount_health.desc": "Показать интерфейс при изменении здоровья сущности, на которой вы едете.",
-  "hudless.option.status_bars": "Скрыть полоски статуса",
-  "hudless.option.status_bars.desc": "Скрыть индикаторы здоровья, голода, брони, пузырьков воздуха.",
-  "hudless.option.experience": "Скрыть полосу опыта",
-  "hudless.option.experience.desc": "Скрыть индикатор опыта.",
-  "hudless.option.effects": "Скрыть активные эффекты",
-  "hudless.option.effects.desc": "Скрыть отображение активных эффектов зелий.",
-  "hudless.option.scoreboard": "Скрыть скордборд",
-  "hudless.option.scoreboard.desc": "Скрыть боковую панель счёта.",
-  "hudless.option.overlay": "Скрыть оверлеи",
-  "hudless.option.overlay.desc": "Скрыть дополнительные оверлей-элементы.",
-  "hudless.option.hotbar": "Скрыть хотбар",
-  "hudless.option.hotbar.desc": "Скрыть панель быстрого доступа.",
-  "hudless.option.held_item_tooltip": "Скрыть подсказки предметов",
-  "hudless.option.held_item_tooltip.desc": "Скрыть всплывающие подсказки удерживаемых предметов.",
-  "hudless.option.crosshair": "Скрыть перекрестие",
-  "hudless.option.crosshair.desc": "Скрыть перекрестие прицеливания.",
-  "hudless.option.mount_health": "Скрыть здоровье маунта",
-  "hudless.option.mount_health.desc": "Скрыть индикатор здоровья сущности, на которой вы едете."
+  "modmenu.descriptionTranslation.${mod_id}": "Клиентский мод для Fabric, автоматически скрывающий элементы интерфейса с настраиваемыми условиями и плавной анимацией.",
+  "${mod_id}.modmenu.title": "Hudless",
+  "${mod_id}.modmenu.no_config_library_screen.message": "Вам необходимо установить §6§lYet Another Config Lib [YACL]§f, чтобы открыть экран конфигурации ${mod_name} \n\n§a§lОткрыть страницу §6§lYACL §a§lна Modrinth?",
+
+  "${mod_id}.modmenu.category.settings.name": "Основные настройки",
+  "${mod_id}.modmenu.category.huds.name": "Элементы интерфейса",
+  "${mod_id}.modmenu.category.triggers.name": "Условия отображения",
+
+  "${mod_id}.modmenu.option.enableMod.name": "Включить мод",
+  "${mod_id}.modmenu.option.enableMod.description": "Активировать или отключить функциональность Hudless.",
+
+  "${mod_id}.modmenu.option.enableFading.name": "Плавное исчезновение",
+  "${mod_id}.modmenu.option.enableFading.description": "Применить эффект плавного исчезновения при скрытии элементов HUD.",
+
+  "${mod_id}.modmenu.option.visibleTicks.name": "Время отображения (тики)",
+  "${mod_id}.modmenu.option.visibleTicks.description": "Сколько времени (в тиках) HUD остаётся видимым после срабатывания условия.",
+
+  "${mod_id}.modmenu.option.hideSpeed.name": "Скорость скрытия",
+  "${mod_id}.modmenu.option.hideSpeed.description": "Скорость, с которой элементы HUD уходят за пределы экрана.",
+
+  "${mod_id}.modmenu.option.hideFadeSpeed.name": "Скорость исчезновения",
+  "${mod_id}.modmenu.option.hideFadeSpeed.description": "Скорость уменьшения прозрачности элементов HUD.",
+
+  "${mod_id}.modmenu.option.maxY.name": "Максимальное смещение по Y",
+  "${mod_id}.modmenu.option.maxY.description": "Максимальное смещение по Y (полностью видимое положение HUD).",
+
+  "${mod_id}.modmenu.option.minY.name": "Минимальное смещение по Y",
+  "${mod_id}.modmenu.option.minY.description": "Минимальное смещение по Y (скрытое положение HUD).",
+
+  "${mod_id}.modmenu.option.triggerHotbar.name": "При смене слота хотбара",
+  "${mod_id}.modmenu.option.triggerHotbar.description": "Показывать HUD при переключении слотов в хотбаре.",
+
+  "${mod_id}.modmenu.option.triggerHealth.name": "При изменении здоровья",
+  "${mod_id}.modmenu.option.triggerHealth.description": "Показывать HUD при изменении здоровья игрока.",
+
+  "${mod_id}.modmenu.option.triggerHunger.name": "При изменении голода",
+  "${mod_id}.modmenu.option.triggerHunger.description": "Показывать HUD при изменении уровня голода.",
+
+  "${mod_id}.modmenu.option.triggerArmor.name": "При изменении брони",
+  "${mod_id}.modmenu.option.triggerArmor.description": "Показывать HUD при изменении значения брони.",
+
+  "${mod_id}.modmenu.option.triggerAirBubbles.name": "При изменении воздуха",
+  "${mod_id}.modmenu.option.triggerAirBubbles.description": "Показывать HUD при изменении запаса воздуха под водой.",
+
+  "${mod_id}.modmenu.option.triggerEffects.name": "При изменении эффектов",
+  "${mod_id}.modmenu.option.triggerEffects.description": "Показывать HUD при изменении активных эффектов.",
+
+  "${mod_id}.modmenu.option.triggerMountHealth.name": "При изменении здоровья маунта",
+  "${mod_id}.modmenu.option.triggerMountHealth.description": "Показывать HUD при изменении здоровья существа, на котором вы едете.",
+
+  "${mod_id}.modmenu.option.triggerExperience.name": "При изменении опыта",
+  "${mod_id}.modmenu.option.triggerExperience.description": "Показывать HUD при изменении полосы опыта игрока.",
+
+  "${mod_id}.modmenu.option.hideCrosshair.name": "Скрыть прицел",
+  "${mod_id}.modmenu.option.hideCrosshair.description": "Скрыть перекрестие прицеливания.",
+
+  "${mod_id}.modmenu.option.hideHotbar.name": "Скрыть хотбар",
+  "${mod_id}.modmenu.option.hideHotbar.description": "Скрыть панель быстрого доступа.",
+
+  "${mod_id}.modmenu.option.hideEffects.name": "Скрыть эффекты",
+  "${mod_id}.modmenu.option.hideEffects.description": "Скрыть отображение активных эффектов.",
+
+  "${mod_id}.modmenu.option.hideScoreboard.name": "Скрыть скорборд",
+  "${mod_id}.modmenu.option.hideScoreboard.description": "Скрыть боковую панель счёта.",
+
+  "${mod_id}.modmenu.option.hideBossBar.name": "Скрыть бар босса",
+  "${mod_id}.modmenu.option.hideBossBar.description": "Скрыть полоску здоровья босса.",
+
+  "${mod_id}.modmenu.option.hideChat.name": "Скрыть чат",
+  "${mod_id}.modmenu.option.hideChat.description": "Скрыть сообщения чата.",
+
+  "${mod_id}.modmenu.option.hideSubtitles.name": "Скрыть субтитры",
+  "${mod_id}.modmenu.option.hideSubtitles.description": "Скрыть звуковые субтитры.",
+
+  "${mod_id}.modmenu.option.hideStatusBar.name": "Скрыть полоски статуса",
+  "${mod_id}.modmenu.option.hideStatusBar.description": "Скрыть индикаторы здоровья, голода, брони, воздуха и здоровья маунта.",
+
+  "${mod_id}.modmenu.option.hideProgressBar.name": "Скрыть шкалы прогресса",
+  "${mod_id}.modmenu.option.hideProgressBar.description": "Скрыть полосу опыта, шкалу прыжка лошади, локатор и т.п.",
+
+
+  "${mod_id}.modmenu.formatter.enabled_or_disabled.true": "Включено",
+  "${mod_id}.modmenu.formatter.enabled_or_disabled.false": "Отключено"
 }

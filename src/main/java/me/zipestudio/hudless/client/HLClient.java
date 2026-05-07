@@ -1,36 +1,15 @@
 package me.zipestudio.hudless.client;
 
-import lombok.Getter;
-import me.zipestudio.hudless.backend.HudAnimationHandler;
-import me.zipestudio.hudless.backend.HudElementReplacer;
-import me.zipestudio.hudless.config.HLConfig;
-import me.zipestudio.hudless.config.HudElement;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import me.zipestudio.hudless.HLServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class HLClient implements ClientModInitializer {
+public class HLClient {
 
-    @Getter
-    private static HLConfig config;
+    public static Logger LOGGER = LoggerFactory.getLogger(HLServer.MOD_NAME + "/Client");
 
-    @Override
-    public void onInitializeClient() {
-        if (HLConfig.GSON.load()) {
-            config = HLConfig.GSON.instance();
-        }
-
-        HudRenderCallback.EVENT.register((matrixStack, delta) -> {
-            //? if >=1.21.5 {
-            HudAnimationHandler.render(delta.getTickProgress(false));
-            //?} else {
-            /*HudAnimationHandler.render(delta.getTickDelta(false));
-            *///?}
-        });
-
-        //? if >=1.21.6 {
-        HudElementReplacer.register();
-        //?}
-
+    public static void onInitializeClient() {
+        LOGGER.info("{} Client Initialized", HLServer.MOD_NAME);
     }
 
 }

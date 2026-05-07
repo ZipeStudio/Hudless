@@ -8,34 +8,31 @@
         "${mod_authors}"
     ],
     "contact": {
-        "discord": "https://discord.com/users/339471364312530945",
-        "telegram": "https://t.me/zipeleaf",
-        "minecraft_server": "https://discord.gg/ZsR6XuTkTX",
-        "discord_team": "https://discord.gg/XmGF7rkkuY"
+        "homepage": "https://modrinth.com/mod/${mod_slug}",
+        "issues": "https://github.com/${github_author}/${mod_slug}"
     },
     "license": "${mod_license}",
     "icon": "icon/icon.png",
-    "environment": "client",
+    "environment": "*",
     "entrypoints": {
         "main": [
-          "me.zipestudio.hudless.HLServer"
+          "me.zipestudio.hudless.entrypoint.CommonEntrypoint"
         ],
         "client": [
-          "me.zipestudio.hudless.client.HLClient"
+          "me.zipestudio.hudless.entrypoint.ClientEntrypoint"
         ],
         "modmenu": [
-          "me.zipestudio.hudless.config.ModMenuIntegration"
+            "me.zipestudio.hudless.utils.modmenu.ModMenuIntegration"
         ]
     },
     "depends": {
         "fabricloader": ">=${fabric_loader}",
         "minecraft": ">=${minecraft}",
         "java": ">=${java}",
-        "${fabric_api_id}": "*",
-        "yet_another_config_lib_v3": ">=${yacl}"
+        "${fabric_api_id}": "*"
     },
-    "accessWidener": "aws/${minecraft}.accesswidener",
+    "accessWidener": "${fabric_trick_accesswidener_id}",
     "mixins": [
-        "${mod_id}.mixins.json"
+        "${fabric_trick_mixin_configs}"
     ]
 }
