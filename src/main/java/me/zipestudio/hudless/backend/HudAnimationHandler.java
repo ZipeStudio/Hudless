@@ -122,6 +122,7 @@ public class HudAnimationHandler {
                 if (ci != null) {
                     ci.cancel();
                 }
+                matrices.popMatrix();
                 return;
             }
         }
@@ -163,6 +164,7 @@ public class HudAnimationHandler {
                 if (ci != null) {
                     ci.cancel();
                 }
+                matrices.popPose();
                 return;
             }
         }
