@@ -4,6 +4,8 @@ import me.zipestudio.hudless.HLServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Arrays;
+
 public class HLClient {
 
     public static Logger LOGGER = LoggerFactory.getLogger(HLServer.MOD_NAME + "/Client");

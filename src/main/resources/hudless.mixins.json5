@@ -8,14 +8,14 @@
   "client": [
 
     //? if >=1.21.6 {
-    /*"fresh.ExperienceHudMixin",
+    "fresh.ExperienceHudMixin",
     "fresh.ContextualBarRendererMixin",
     "fresh.JumpableVehicleBarRendererMixin",
-    *///?} else {
-    "legacy.BossHealthOverlayMixin",
+    //?} else {
+    /*"legacy.BossHealthOverlayMixin",
     "legacy.SubtitleOverlayMixin",
     "legacy.FontMixin",
-    //?}
+    *///?}
 
     "GameHudMixin",
     "DrawContextMixin",

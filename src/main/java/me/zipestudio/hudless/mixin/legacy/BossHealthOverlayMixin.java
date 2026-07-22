@@ -2,7 +2,7 @@ package me.zipestudio.hudless.mixin.legacy;
 
 //? if <1.21.6 {
 
-import me.zipestudio.hudless.backend.HudAnimationHandler;
+/*import me.zipestudio.hudless.backend.HudAnimationHandler;
 import me.zipestudio.hudless.config.HudElement;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.BossHealthOverlay;
@@ -25,4 +25,4 @@ public class BossHealthOverlayMixin {
 
 }
 
-//?}
+*///?}

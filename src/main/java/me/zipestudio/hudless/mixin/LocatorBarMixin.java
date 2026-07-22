@@ -2,7 +2,11 @@ package me.zipestudio.hudless.mixin;
 
 import me.zipestudio.hudless.backend.HudAnimationHandler;
 import me.zipestudio.hudless.config.HudElement;
-import net.minecraft.client.gui.GuiGraphics;
+//? if >=26.1 {
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+//?} else {
+/*import net.minecraft.client.gui.GuiGraphics;
+*///?}
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,10 +15,51 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.minecraft.client.DeltaTracker;
 
 @Pseudo
-@Mixin(targets = "net.minecraft.client.gui.contextualbar.LocatorBarRenderer")
+//? if >=26.2 {
+@Mixin(targets = "net.minecraft.client.gui.contextualbar.LocatorBar")
+//?} else {
+/*@Mixin(targets = "net.minecraft.client.gui.contextualbar.LocatorBarRenderer")
+*///?}
 public class LocatorBarMixin {
 
-    //? if >=1.21.6 {
+    //? if >=26.1 {
+
+    @Inject(
+            method = "extractRenderState",
+            at = @At("HEAD"),
+            cancellable = true
+    )
+    private void beforeRender(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        HudAnimationHandler.beforeInject(HudElement.PROGRESS_BAR, guiGraphics, ci);
+    }
+
+    @Inject(
+            method = "extractRenderState",
+            at = @At("RETURN")
+    )
+    private void afterRender(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        HudAnimationHandler.afterInject(guiGraphics);
+    }
+
+    @Inject(
+            method = "extractBackground",
+            at = @At("HEAD"),
+            cancellable = true
+    )
+    private void beforeBackground(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        HudAnimationHandler.beforeInject(HudElement.PROGRESS_BAR, guiGraphics, ci);
+    }
+
+    @Inject(
+            method = "extractBackground",
+            at = @At("RETURN")
+    )
+    private void afterBackground(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        HudAnimationHandler.afterInject(guiGraphics);
+    }
+
+    //?} elif >=1.21.6 {
+
     /*@Inject(
             method = "render",
             at = @At("HEAD"),

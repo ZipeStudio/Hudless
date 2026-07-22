@@ -31,7 +31,7 @@ public class NoConfigLibraryScreen {
 	private static void onConfirm(boolean open, Screen parent) {
 		if (open) {
 			try {
-				String url = NoConfigLibraryScreen.YACL_MODRINTH_LINK + SharedConstants.getCurrentVersion()./*? if >=1.21.6 {*/ /*name() *//*?} else {*/getName()/*?}*/;
+				String url = NoConfigLibraryScreen.YACL_MODRINTH_LINK + SharedConstants.getCurrentVersion()./*? if >=1.21.6 {*/ name() /*?} else {*//*getName()*//*?}*/;
 				URI link = new URI(url);
 				String string = link.getScheme();
 				if (string == null) {
@@ -45,7 +45,11 @@ public class NoConfigLibraryScreen {
 				HLClient.LOGGER.error("Can't open YACL Modrinth page:", e);
 			}
 		} else {
-			Minecraft.getInstance().setScreen(parent);
+			//? if >=26.2 {
+			Minecraft.getInstance().gui.setScreen(parent);
+			//?} else {
+			/*Minecraft.getInstance().setScreen(parent);
+			*///?}
 		}
 	}
 

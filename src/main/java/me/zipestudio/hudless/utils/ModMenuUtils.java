@@ -3,7 +3,7 @@ package me.zipestudio.hudless.utils;
 import me.zipestudio.hudless.HLServer;
 import me.zipestudio.hudless.utils.yacl.utils.SimpleContent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.Function;
 
@@ -29,7 +29,7 @@ public class ModMenuUtils {
 		return HLServer.text(key + ".description");
 	}
 
-	public static ResourceLocation getContentId(SimpleContent content, String contentId) {
+	public static Identifier getContentId(SimpleContent content, String contentId) {
 		return HLServer.id(String.format("textures/config/%s.%s", contentId, content.getFileExtension()));
 	}
 

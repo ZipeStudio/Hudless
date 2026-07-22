@@ -8,15 +8,20 @@ import me.zipestudio.hudless.config.HudElement;
 import me.zipestudio.hudless.config.LeafyConfig;
 import me.zipestudio.hudless.config.groups.Settings;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+
+//? if >=26.1 {
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+//?} else {
+/*import net.minecraft.client.gui.GuiGraphics;
+*///?}
 import org.joml.Matrix3x2fStack;
 import org.spongepowered.asm.mixin.Unique;
 
 //? if >=1.21.2 {
-/*import net.minecraft.util.ARGB;
- *///?} else {
-import net.minecraft.util.FastColor;
-//?}
+import net.minecraft.util.ARGB;
+ //?} else {
+/*import net.minecraft.util.FastColor;
+*///?}
 
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
@@ -106,7 +111,49 @@ public class HudAnimationHandler {
         return getY();
     }
 
-    //? if >=1.21.6 {
+    //? if >=26.1 {
+    public static void beforeInject(HudElement element, GuiGraphicsExtractor drawContext, CallbackInfo ci) {
+
+        Matrix3x2fStack matrices = drawContext.pose();
+        matrices.pushMatrix();
+
+        LeafyConfig config = LeafyConfig.getInstance();
+        if (!config.getSettings().isEnableMod()) {
+            return;
+        }
+
+        if (!element.functionDisabled()) {
+            if (isHided()) {
+                if (ci != null) {
+                    ci.cancel();
+                }
+                matrices.popMatrix();
+                return;
+            }
+        }
+
+        HudElement.currentElement = element;
+        if (!element.isTranslate()) return;
+
+        boolean hideHotbar = config.getHuds().isHideHotbar();
+        boolean hideProgress = config.getHuds().isHideProgressBar();
+
+        boolean shiftedByLayout =
+                (element == HudElement.STATUS_BAR && (hideHotbar || hideProgress)) ||
+                        (element == HudElement.PROGRESS_BAR && (hideHotbar || hideProgress));
+
+        if (shiftedByLayout) {
+            matrices.translate(0f, (float) getHotbarLayoutOffset(element));
+            return;
+        }
+
+        if (!element.functionDisabled()) {
+            matrices.translate(0f, (float) getY());
+            return;
+        }
+
+    }
+    //?} elif >=1.21.6 {
     /*public static void beforeInject(HudElement element, GuiGraphics drawContext, CallbackInfo ci) {
 
         Matrix3x2fStack matrices = drawContext.pose();
@@ -122,6 +169,7 @@ public class HudAnimationHandler {
                 if (ci != null) {
                     ci.cancel();
                 }
+                matrices.popMatrix();
                 return;
             }
         }
@@ -163,6 +211,7 @@ public class HudAnimationHandler {
                 if (ci != null) {
                     ci.cancel();
                 }
+                matrices.popPose();
                 return;
             }
         }
@@ -189,7 +238,7 @@ public class HudAnimationHandler {
 
     }
     *///?} else {
-    public static void beforeInject(HudElement element, GuiGraphics drawContext, CallbackInfo ci) {
+    /*public static void beforeInject(HudElement element, GuiGraphics drawContext, CallbackInfo ci) {
 
         PoseStack matrices = drawContext.pose();
         matrices.pushPose();
@@ -236,9 +285,14 @@ public class HudAnimationHandler {
         }
 
     }
-    //?}
+    *///?}
 
-    //? if >=1.21.6 {
+    //? if >=26.1 {
+    public static void afterInject(GuiGraphicsExtractor drawContext) {
+        drawContext.pose().popMatrix();
+        HudElement.currentElement = null;
+    }
+    //?} elif >=1.21.6 {
     /*public static void afterInject(GuiGraphics drawContext) {
         drawContext.pose().popMatrix();
         HudElement.currentElement = null;
@@ -253,7 +307,7 @@ public class HudAnimationHandler {
         HudElement.currentElement = null;
     }
     *///?} else {
-    public static void afterInject(GuiGraphics drawContext) {
+    /*public static void afterInject(GuiGraphics drawContext) {
 
         drawContext.setColor(1f, 1f, 1f, 1f);
 
@@ -263,7 +317,7 @@ public class HudAnimationHandler {
 
         HudElement.currentElement = null;
     }
-    //?}
+    *///?}
 
     public static int applyAlphaToColor(int originalColor) {
 
@@ -280,20 +334,20 @@ public class HudAnimationHandler {
         int globalAlpha = getAlpha();
 
         //? if >=1.21.2 {
-        /*int originalAlpha = ARGB.alpha(originalColor);
+        int originalAlpha = ARGB.alpha(originalColor);
         int newAlpha = (originalAlpha * globalAlpha) / 255;
         return ARGB.color(newAlpha,
                 ARGB.red(originalColor),
                 ARGB.green(originalColor),
                 ARGB.blue(originalColor));
-        *///?} else {
-        int originalAlpha = FastColor.ARGB32.alpha(originalColor);
+        //?} else {
+        /*int originalAlpha = FastColor.ARGB32.alpha(originalColor);
         int newAlpha = (originalAlpha * globalAlpha) / 255;
         return FastColor.ARGB32.color(newAlpha,
                 FastColor.ARGB32.red(originalColor),
                 FastColor.ARGB32.green(originalColor),
                 FastColor.ARGB32.blue(originalColor));
-        //?}
+        *///?}
     }
 
 }

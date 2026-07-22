@@ -1,14 +1,5 @@
-v2.0.5:
-
+v2.0.6:
 ### Changes
-- The project has been migrated from yarn to mojmap mappings.
-- Added Fabric support for 1.21, and 1.21.9–1.21.11
-- Added (Neo)Forge support for 1.21–1.21.11
-- Added support for bossbar, subtitles, and chat
-
+- Ported to 26.1-26.2
 ### Fixes
-- Added status/progress bar shifting when the hotbar is hidden
-- Fixed HUD fading behavior
-
-### Internal
-- Refactored parts of the codebase
+- Fixed GUI matrix issue with other mods
